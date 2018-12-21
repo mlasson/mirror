@@ -1,0 +1,16 @@
+{
+  "name": "babybel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "html/index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "babylonjs": "preview",
+    "typescript": "^3.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

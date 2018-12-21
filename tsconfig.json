@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "system",
+    "moduleResolution": "node",
+    "outDir": "js/",
+    "rootDir": "./src/ts",
+    "noEmitOnError": true,
+    "types": [
+      "babylonjs"
+    ],
+  },
+  "exclude": [
+    "node_modules",
+    ".npm"
+  ],
+  "include": [
+        "src/ts/**/*.ts"
+]
+}

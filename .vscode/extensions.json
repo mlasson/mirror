@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+       "msjsdiag.debugger-for-chrome",
+       "ritwickdey.liveserver",
+       "eg2.tslint",
+       "ms-vscode.typescript-javascript-grammar"
+    ]
+}

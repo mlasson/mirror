@@ -23,6 +23,8 @@ class FormControl implements Control {
 
 class RangeControl implements Control {
     private static id : number = 0;
+    min : number = 0; 
+    max : number = 0; 
     private _label : string; 
     private callbacks :  ((input : number) => void) [] = [];
 
@@ -32,7 +34,9 @@ class RangeControl implements Control {
         label : HTMLLabelElement;
     };
 
-    constructor () {
+    constructor (min : number, max : number) {
+        this.min = min; 
+        this.max = max;
         RangeControl.id ++;
         var this_id = 'formControlRange' + RangeControl.id;
         this.elements = {
@@ -55,11 +59,11 @@ class RangeControl implements Control {
     }
 
     public get value() : number {
-        return Number(this.elements.input.value);
+        return this.min + Number(this.elements.input.value) * (this.max - this.min) / 100;
     }
 
     public set value(x: number) {
-        this.elements.input.value = String(x);
+        this.elements.input.value = String(100 * (x - this.min) / (this.max - this.min));
     }
 
     public get label(): string {
@@ -95,9 +99,9 @@ class State {
 
 function createState(): State {
     let form = new FormControl();    
-    let x = new RangeControl();
-    let y = new RangeControl();
-    let z = new RangeControl();
+    let x = new RangeControl(-5,5);
+    let y = new RangeControl(-5,5);
+    let z = new RangeControl(-5,5);
 
     document.body.appendChild(form.root);
     form.add(x);

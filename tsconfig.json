@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ES5",
     "module": "system",
+    "sourceMap": true,
     "moduleResolution": "node",
     "outDir": "js/",
     "rootDir": "./src/ts",
